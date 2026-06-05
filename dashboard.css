@@ -1,0 +1,89 @@
+.metric-grid,
+.content-grid,
+.management-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 22px;
+}
+
+.metric-card {
+  padding: 20px;
+}
+
+.metric-card span {
+  display: block;
+  color: var(--brand-dark);
+  font-size: 2.4rem;
+  font-weight: 900;
+}
+
+.metric-card p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.metric-card.alert span {
+  color: var(--danger);
+}
+
+.content-grid,
+.management-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.panel {
+  padding: 20px;
+}
+
+.compact {
+  gap: 12px;
+}
+
+.section-heading {
+  margin-bottom: 12px;
+}
+
+.section-heading a {
+  color: var(--brand);
+  font-weight: 800;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+th {
+  background: #f8fafc;
+  color: #344054;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+td {
+  color: #344054;
+}
+
+td select {
+  min-height: 40px;
+}

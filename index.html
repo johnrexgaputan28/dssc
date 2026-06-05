@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Academic Schedule</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+  <script defer src="../firebase.js"></script>
+  <script defer src="../app.js"></script>
+  <script defer src="../auth.js"></script>
+
+  
+</head>
+<body class="login-page">
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/service-worker.js");
+    }
+  </script>
+  <main class="login-shell">
+    <section class="brand-panel" aria-label="Project overview">
+      <div class="brand-mark">DSSC</div>
+      <p class="eyebrow">Academic scheduling platform</p>
+      <h1>Smart Academic Schedule and Notification System</h1>
+      <p>
+        A centralized calendar and announcement system for students,
+        professors, and school administrators.
+      </p>
+      <div class="feature-strip">
+        <span>Section-based updates</span>
+        <span>Class cancellations</span>
+        <span>Announcement feed</span>
+      </div>
+    </section>
+
+    <section class="login-card" aria-label="Authentication forms">
+      <div class="auth-tabs" role="tablist" aria-label="Account options">
+        <button class="auth-tab active" type="button" data-auth-tab="login">Sign in</button>
+        <button class="auth-tab" type="button" data-auth-tab="register">Create account</button>
+      </div>
+
+      <div data-auth-panel="login">
+        <h2>Sign in</h2>
+        <p class="muted">Use your school account to access your schedule.</p>
+
+        <form id="loginForm" class="stacked-form">
+          <label>
+            Email
+            <input type="email" id="email" value="student@college.edu" required>
+          </label>
+          <label>
+            Password
+            <input type="password" id="password" value="password123" required>
+          </label>
+          <button type="submit" class="primary-button">Login</button>
+        </form>
+
+        <div class="demo-grid" aria-label="Demo accounts">
+          <button class="ghost-button" data-demo-login="student@college.edu">Student</button>
+          <button class="ghost-button" data-demo-login="professor@college.edu">Professor</button>
+          <button class="ghost-button" data-demo-login="admin@college.edu">Admin</button>
+        </div>
+      </div>
+
+      <div data-auth-panel="register" hidden>
+        <h2>Create account</h2>
+        <p class="muted">Create a student or professor account. Admin accounts are created by school administrators.</p>
+
+        <form id="registerForm" class="stacked-form">
+          <label>
+            Full name
+            <input type="text" id="registerName" placeholder="Juan Dela Cruz" required>
+          </label>
+          <label>
+            Email
+            <input type="email" id="registerEmail" placeholder="name@college.edu" required>
+          </label>
+          <label>
+            Password
+            <input type="password" id="registerPassword" minlength="6" placeholder="At least 6 characters" required>
+          </label>
+          <div class="form-row">
+            <label>
+              Role
+              <select id="registerRole" required>
+                <option value="student">Student</option>
+                <option value="professor">Professor</option>
+              </select>
+            </label>
+            <label>
+              Section
+              <input type="text" id="registerSection" placeholder="BSIT-2A" required>
+            </label>
+          </div>
+          <button type="submit" class="primary-button">Create Account</button>
+        </form>
+      </div>
+
+      <p id="loginMessage" class="form-message" role="status"></p>
+    </section>
+  </main>
+
+  <a class="download-app" href="app-debug.apk" download="SmartAcademicSchedule.apk" aria-label="Download the app APK">Download App</a>
+</body>
+</html>
+

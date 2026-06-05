@@ -1,0 +1,36 @@
+.calendar-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.calendar-day {
+  min-height: 260px;
+  padding: 16px;
+  box-shadow: none;
+}
+
+.calendar-day h3 {
+  margin: 0 0 14px;
+}
+
+.calendar-event {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: #f8fafc;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.calendar-event:hover,
+.calendar-event:focus-within {
+  background: #ecfeff;
+  transform: translateY(-1px);
+}
+
+.calendar-event span,
+.calendar-event small {
+  color: var(--muted);
+}
